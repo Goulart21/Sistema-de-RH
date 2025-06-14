@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="front.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>SafeScan - Cadastrar Funcionário</title>
+</head>
+
+<body>
+    
+    <aside class="sidebar">
+        <div class="logo-container">
+            <h1 class="logo">SafeScan</h1>
+        </div>
+
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="incial.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cadastrar.html" class="nav-link active">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        Cadastrar Funcionário
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gerenciar.html" class="nav-link">
+                        <i class="fas fa-users-cog nav-icon"></i>
+                        Gerenciar Funcionários
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gerenciar_ponto.html" class="nav-link">
+                        <i class="fas fa-clock nav-icon"></i>
+                        Registros de Ponto
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grafico.html" class="nav-link">
+                        <i class="fas fa-chart-bar nav-icon"></i>
+                        Análises e Gráficos
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    
+    <div class="sidebar-overlay"></div>
+
+  
+    <header class="position-relative">
+        <h1 class="text-center m-0">SafeScan <img src="icons8-leitura-de-reconhecimento-facial-50 (1).png"
+                alt="Reconhecimento"></h1>
+        <button id="toggle-theme" class="theme-toggle position-absolute" style="top: 10px; right: 20px;">🌙</button>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="card-glass">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center; font-size: 30px;">Cadastrar Funcionário</h5>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form id="formCadastro" method="POST">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" name="nome" id="nome" class="form-control"
+                                        placeholder="Digite o nome" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" name="cargo" id="cargo" class="form-control"
+                                        placeholder="Digite o cargo" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="departamento">Departamento</label>
+                                    <select name="departamento" id="departamento" class="form-control" required>
+                                        <option value="">Selecione um departamento</option>
+                                        <option value="RH">RH</option>
+                                        <option value="TI">TI</option>
+                                        <option value="Financeiro">Financeiro</option>
+                                        <option value="Logística">Logística</option>
+                                        <option value="Marketing">Marketing</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="data_contratacao">Data de Contratação</label>
+                                    <input type="date" name="data_contratacao" id="data_contratacao"
+                                        class="form-control" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senha">Senha</label>
+                                    <input type="password" name="senha" id="senha" class="form-control"
+                                        placeholder="Digite uma senha" required />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save btn-icon"></i>
+                                    Cadastrar
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="webcam-container">
+                                <h5>Foto</h5>
+                                <div class="webcam-preview">
+                                    <video id="video" autoplay></video>
+
+                                </div>
+                                <div class="webcam-controls">
+                                    <button type="button" class="btn btn-secondary mt-2"
+                                        onclick="capturePhoto()">Capturar Foto</button>
+                                </div>
+                                <img id="preview" class="upload-preview mt-2" src="#" alt="Pré-visualização"
+                                    style="display: none;" />
+                                <canvas id="canvas" style="display: none;"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2025 SafeScan. Todos os direitos reservados.</p>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="front.js" defer></script>
+    <script src="incial.js" defer></script>
+    <title>SafeScan - Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+  
+    <aside class="sidebar">
+        <div class="logo-container">
+            <h1 class="logo">SafeScan</h1>
+        </div>
+        
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="incial.html" class="nav-link active">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="cadastrar.html" class="nav-link">
+                        <i class="fas fa-user-plus nav-icon"></i>
+                        Cadastrar Funcionário
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gerenciar.html" class="nav-link">
+                        <i class="fas fa-users-cog nav-icon"></i>
+                        Gerenciar Funcionários
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="gerenciar_ponto.html" class="nav-link">
+                        <i class="fas fa-clock nav-icon"></i>
+                        Registros de Ponto
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="grafico.html" class="nav-link">
+                        <i class="fas fa-chart-bar nav-icon"></i>
+                        Análises e Gráficos
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    
+    
+    <div class="sidebar-overlay"></div>
+    
+   
+    <header class="position-relative">
+        <h1 class="text-center m-0">SafeScan <img src="reconhecimento_facial_branco.png" alt="Reconhecimento"></h1>
+        <button id="toggle-theme" class="theme-toggle position-absolute" style="top: 10px; right: 20px;">🌙</button>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="card-glass stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users fa-2x" style="color: var(--accent-color);"></i>
+                    </div>
+                    <div class="stat-value" id="total-funcionarios-value">...</div>
+                    <div class="stat-label">Total de Funcionários</div>
+                </div>
+                
+                <div class="card-glass stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-check fa-2x" style="color: var(--accent-color);"></i>
+                    </div>
+                    <div class="stat-value" id="total-pontos-value">...</div>
+                    <div class="stat-label">Total de Registros de Ponto</div>
+                </div>
+                
+                
+            </div>
+            
+           
+            
+            <div class="row" style="display: flex; gap: 20px; margin-top: 20px;">
+                <div class="card-glass" style="flex: 1;">
+                    <div class="card-header">
+                        <h3 class="card-title">Funcionários por Departamento</h3>
+                    </div>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="departamentos-chart"></canvas>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 SafeScan. Todos os direitos reservados.</p>
+    </footer>
+
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>SafeScan - Gerenciar Funcionários</title>
+  <script src="front.js" defer></script>
+  <script src="gerenciar.js" defer></script>
+</head>
+
+<body>
+  
+  <aside class="sidebar">
+    <div class="logo-container">
+      <h1 class="logo">SafeScan</h1>
+    </div>
+    
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="incial.html" class="nav-link">
+            <i class="fas fa-tachometer-alt nav-icon"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="cadastrar.html" class="nav-link">
+            <i class="fas fa-user-plus nav-icon"></i>
+            Cadastrar Funcionário
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="gerenciar.html" class="nav-link active">
+            <i class="fas fa-users-cog nav-icon"></i>
+            Gerenciar Funcionários
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="gerenciar_ponto.html" class="nav-link">
+            <i class="fas fa-clock nav-icon"></i>
+            Registros de Ponto
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="grafico.html" class="nav-link">
+            <i class="fas fa-chart-bar nav-icon"></i>
+            Análises e Gráficos
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  
+  
+  <div class="sidebar-overlay"></div>
+  
+  
+  <header class="position-relative">
+    <h1 class="text-center m-0">SafeScan <img src="icons8-leitura-de-reconhecimento-facial-50 (1).png"
+        alt="Reconhecimento"></h1>
+    <button id="toggle-theme" class="theme-toggle position-absolute" style="top: 10px; right: 20px;">🌙</button>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="card-glass">
+       
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist" style="border-bottom: 1px solid var(--card-border);">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="gerenciar-tab" href="gerenciar.html" role="tab" aria-controls="gerenciar"
+              aria-selected="true">Gerenciar Funcionários</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link" id="registrar-tab" href="registrar.html" role="tab" aria-controls="registrar"
+              aria-selected="false">Registrar Avaliações</a>
+          </li>
+        </ul>
+
+        
+        <h2 class="card-title">Gerenciar Funcionários</h2>
+
+        
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Departamento</th>
+                <th>Data de Contratação</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+
+            <tbody id="listaFuncionarios">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SafeScan. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+
+</html>

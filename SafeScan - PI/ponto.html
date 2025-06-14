@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="front.js" defer></script>
+    <script src="ponto.js" defer></script>
+    <title>SafeScan - Registro de Ponto</title>
+</head>
+
+<body>
+   
+    <aside class="sidebar">
+    <div class="logo-container">
+        <h1 class="logo">SafeScan</h1>
+    </div>
+
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <button id="logout-btn" class="btn btn-danger mx-auto d-block">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const logoutBtn = document.getElementById("logout-btn");
+        logoutBtn.addEventListener("click", function () {
+            
+            window.location.href = "index.html";
+        });
+    });
+</script>
+    
+   
+    <div class="sidebar-overlay"></div>
+    
+    <header class="position-relative">
+        <h1 class="text-center m-0">SafeScan <img src="icons8-leitura-de-reconhecimento-facial-50 (1).png"
+                alt="Reconhecimento"></h1>
+        <button id="toggle-theme" class="theme-toggle position-absolute"
+            style="top: 10px; right: 20px;">🌙</button>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="card-glass">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center; font-size: 30px;">Reconhecimento Facial</h5>
+                    <div class="webcam-container">
+                        <h6>Registro de Ponto - Reconhecimento Facial</h6>
+                        <div class="webcam-preview">
+                            <video id="video" autoplay playsinline></video>
+                        </div>
+                        <div class="webcam-controls">
+                            <button id="capture-btn" class="btn btn-primary">
+                                <i class="fas fa-camera btn-icon"></i>
+                                Registrar Ponto
+                            </button>
+                        </div>
+                        <canvas id="canvas" style="display:none;"></canvas>
+                        <p id="message" class="webcam-status"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 SafeScan. Todos os direitos reservados.</p>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="front.js" defer></script>
+    <script src="index.js" defer></script>
+    <title>SafeScan</title>
+</head>
+
+<body>
+    <header class="position-relative">
+        <h1 class="text-center m-0">SafeScan <img src="icons8-leitura-de-reconhecimento-facial-50 (1).png"
+                alt="Reconhecimento"></h1>
+        <button id="toggle-theme" class="theme-toggle position-absolute"
+            style="top: 10px; right: 20px;">🌙</button>
+    </header>
+
+    <main>
+        <div class="center-container" style="margin-top: 90px;">
+            <div class="card-glass">
+                <div class="card-body">
+                    <h5 class="card-title text-center" style="font-size: 30px;">Acesso ao Sistema</h5>
+
+                    <p class="text-center mt-4">
+                        <button id="btn-reconhecimento" class="btn btn-outline-success w-100">
+                            <i class="fas fa-camera btn-icon"></i> Entrar por reconhecimento facial
+                        </button>
+                    </p>
+
+                    <p id="mensagem" class="text-center mt-3 text-info"></p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center mt-5 mb-3">
+        <p>&copy; 2025 SafeScan. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
